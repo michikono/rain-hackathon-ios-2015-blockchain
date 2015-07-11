@@ -63,11 +63,11 @@ class DetailVC: UIViewController {
     }
     
     @IBAction func transferPressed() {
-        if let asset = asset {
-            ChainAPI.sharedInstance.transferAsset(asset.assetID, outputBucketID: "d4840e4e-4768-41db-9e57-1fe13098fb4f", inputBucketID: "aecbc268-2ed2-4143-b69c-da89c1bb9a99") { success in
-                
-                print("Eric! Success? \(success)")
-            }
-        }
+//        if let asset = asset {
+//            ChainAPI.sharedInstance.transferAsset(asset.assetID, outputBucketID: "d4840e4e-4768-41db-9e57-1fe13098fb4f", inputBucketID: "aecbc268-2ed2-4143-b69c-da89c1bb9a99") { success in
+//                
+//                print("Eric! Success? \(success)")
+//            }
+       // }
     }
 }
