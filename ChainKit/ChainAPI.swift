@@ -60,8 +60,9 @@ public class ChainAPI {
         var request = NSMutableURLRequest(URL: url)
         
         let basicAuthCredentials = "\(API_ID):\(API_SECRET)"
+        
         let base64 = basicAuthCredentials.base64Encoded()
-        request.setValue(base64, forHTTPHeaderField: "Authorization")
+        request.setValue("Basic \(base64)", forHTTPHeaderField: "Authorization")
         
         return request
     }
@@ -71,7 +72,6 @@ extension String {
     func base64Encoded() -> String {
         let plainData = dataUsingEncoding(NSUTF8StringEncoding)
         let base64String = plainData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
-        println("base64: \(base64String)")
         return base64String!
     }
 }
