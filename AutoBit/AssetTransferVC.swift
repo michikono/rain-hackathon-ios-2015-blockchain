@@ -32,14 +32,14 @@ class AssetTransferVC: UIViewController {
         var searchButton:UIButton = UIButton.buttonWithType(.Custom) as! UIButton
         searchButton.addTarget(self, action: "searchButtonClicked:", forControlEvents: .TouchUpInside)
         searchButton.setImage(UIImage(named: "search_sm_360"), forState: .Normal)
-        searchButton.sizeToFit()
+        searchButton.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
         var searchButtonItem:UIBarButtonItem = UIBarButtonItem(customView: searchButton)
         self.navigationItem.rightBarButtonItem  = searchButtonItem
         
         var backButton:UIButton = UIButton.buttonWithType(.Custom) as! UIButton
         backButton.addTarget(self, action: "backButtonItemClicked:", forControlEvents: .TouchUpInside)
         backButton.setImage(UIImage(named: "back_arrow_360"), forState: .Normal)
-        backButton.sizeToFit()
+        backButton.frame = CGRect(x: 0, y: 0, width: 33, height: 34)
         var backButtonItem:UIBarButtonItem = UIBarButtonItem(customView: backButton)
         self.navigationItem.leftBarButtonItem  = backButtonItem
 
