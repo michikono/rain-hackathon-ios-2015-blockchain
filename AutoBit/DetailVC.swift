@@ -11,4 +11,24 @@ import UIKit
 
 class DetailVC: UIViewController {
     
+    @IBOutlet weak var balanceLabel: UILabel!
+    @IBOutlet weak var monthYearLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        balanceLabel.text = "$28"
+        idLabel.text = "IQ84"
+        monthYearLabel.text = "March 2013"
+        nameLabel.text  = "Haruki Marakami 2013"
+    }
+    
+    
+    @IBAction func tansferAssetButtonClicked(sender: AnyObject) {
+    }
+    
+    
 }
