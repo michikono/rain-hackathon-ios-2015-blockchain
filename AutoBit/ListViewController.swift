@@ -94,10 +94,11 @@ extension ListViewController: UITableViewDataSource {
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: 20))
         headerView.backgroundColor = UIColor.clearColor()
         
-        let label = UILabel(frame: CGRect(x: 12, y: 8, width: headerView.bounds.width - 24, height: headerView.bounds.height-10))
-        label.font = UIFont.boldSystemFontOfSize(13)
+        let label = UILabel(frame: CGRect(x: 12, y: 18, width: headerView.bounds.width - 24, height: headerView.bounds.height-18))
+        label.font = UIFont(name: "ProximaNova-Semibold", size: 16)
         label.autoresizingMask = .FlexibleHeight | .FlexibleWidth
         headerView.addSubview(label)
+        // 16 semibold
         
         switch section {
         case 0:
@@ -118,7 +119,7 @@ extension ListViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30
+        return 40
     }
 }
 
