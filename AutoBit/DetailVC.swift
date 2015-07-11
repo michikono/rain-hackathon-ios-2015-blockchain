@@ -30,14 +30,15 @@ class DetailVC: UIViewController {
         monthYearLabel.text = "March 2013"
         nameLabel.text  = "Haruki Marakami 2013"
        
-        var leftButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
-        leftButton.setImage(UIImage(named: "back_arrow_360"), forState: UIControlState.Normal)
-        leftButton.setImage(UIImage(named: "back_arrow_360"), forState: UIControlState.Selected)
-        leftButton.addTarget(self, action: "backButtonClicked", forControlEvents: UIControlEvents.TouchUpInside)
-        
-        let leftBarButton = UIBarButtonItem()
-        leftBarButton.customView = leftButton
-        self.navigationItem.leftBarButtonItem = leftBarButton
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+//        var leftButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+//        leftButton.setImage(UIImage(named: "back_arrow_360"), forState: UIControlState.Normal)
+//        leftButton.setImage(UIImage(named: "back_arrow_360"), forState: UIControlState.Selected)
+//        leftButton.addTarget(self, action: "backButtonClicked", forControlEvents: UIControlEvents.TouchUpInside)
+//        
+//        let leftBarButton = UIBarButtonItem()
+//        leftBarButton.customView = leftButton
+//        self.navigationItem.leftBarButtonItem = leftBarButton
         
         var barButton = UIBarButtonItem()
         barButton.customView = searchButton
@@ -56,13 +57,6 @@ class DetailVC: UIViewController {
 
         }, completion: nil)
        
-//        UIView.animateWithDuration(1.0, animations: { () -> Void in
-//            self.searchBar.hidden = false
-//
-//        }, completion: nil)
-    }
-    
-    @IBAction func tansferAssetButtonClicked(sender: AnyObject) {
     }
     
     
