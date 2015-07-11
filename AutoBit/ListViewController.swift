@@ -160,7 +160,12 @@ extension ListViewController: UICollectionViewDataSource {
 
 extension ListViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        // Need to push now
         collectionView.deselectItemAtIndexPath(indexPath, animated: true)
+        
+        let cv = collectionView as! IndexedCollectionView
+        let asset = buckets[cv.indexPath.section][indexPath.item]
+        
+        let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! DetailVC
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }

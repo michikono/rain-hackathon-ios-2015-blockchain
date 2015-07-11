@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iYl-30-M2h">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Z7b-Rw-h7q">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -18,7 +18,7 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--List View Controller-->
+        <!--THINGS-->
         <scene sceneID="LUq-ep-V2o">
             <objects>
                 <viewController id="iYl-30-M2h" customClass="ListViewController" customModule="AutoBit" customModuleProvider="target" sceneMemberID="viewController">
@@ -27,11 +27,11 @@
                         <viewControllerLayoutGuide type="bottom" id="hiD-cl-r3o"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ofi-HX-wGR">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="170" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="aP8-br-SzT">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                 <containerView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" id="LK3-OV-hp4">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="170"/>
@@ -141,6 +141,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" title="THINGS" id="uUs-6q-DSt"/>
                     <connections>
                         <outlet property="tableView" destination="aP8-br-SzT" id="108-1C-3xv"/>
                     </connections>
@@ -273,7 +274,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mcj-Iv-18U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="435" y="-229"/>
+            <point key="canvasLocation" x="435" y="-239"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="I2B-Vl-7Sm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z7b-Rw-h7q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="RHO-wA-BR9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="iYl-30-M2h" kind="relationship" relationship="rootViewController" id="FJx-Cz-7EY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sd6-J9-LKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-294" y="217"/>
         </scene>
     </scenes>
 </document>
