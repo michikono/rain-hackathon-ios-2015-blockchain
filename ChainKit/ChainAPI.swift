@@ -28,10 +28,14 @@ public class ChainAPI {
                 println("json: \(json)")
                 println("Error: \(error)")
                 
-                completion(asset: ChainAsset(json: json))
+                dispatch_async(dispatch_get_main_queue()) {
+                  completion(asset: ChainAsset(json: json))
+                }
             }).resume()
         } else {
-            completion(asset: nil)
+            dispatch_async(dispatch_get_main_queue()) {
+                completion(asset: nil)
+            }
         }
     }
     
@@ -59,10 +63,14 @@ public class ChainAPI {
                     responseArray.append(asset)
                 }
                 
-                completion(assets: responseArray)
+                dispatch_async(dispatch_get_main_queue()) {
+                    completion(assets: responseArray)
+                }
             }).resume()
         } else {
-            completion(assets: [])
+            dispatch_async(dispatch_get_main_queue()) {
+                completion(assets: [])
+            }
         }
     }
     
