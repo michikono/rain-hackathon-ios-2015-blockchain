@@ -18,7 +18,7 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--THINGS-->
+        <!--ASSET MANAGER-->
         <scene sceneID="LUq-ep-V2o">
             <objects>
                 <viewController id="iYl-30-M2h" customClass="ListViewController" customModule="AutoBit" customModuleProvider="target" sceneMemberID="viewController">
@@ -141,7 +141,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="THINGS" id="uUs-6q-DSt"/>
+                    <navigationItem key="navigationItem" title="ASSET MANAGER" id="uUs-6q-DSt"/>
                     <connections>
                         <outlet property="tableView" destination="aP8-br-SzT" id="108-1C-3xv"/>
                     </connections>
