@@ -30,17 +30,17 @@ class AssetTransferVC: UIViewController {
         searchBar.hidden = true
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
 
-        var myBackButton:UIButton = UIButton.buttonWithType(.Custom) as! UIButton
-        myBackButton.addTarget(self, action: "popToRoot", forControlEvents: .TouchUpInside)
-        myBackButton.setTitle("Back", forState: .Normal)
-        myBackButton.sizeToFit()
-        var myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
-        self.navigationItem.leftBarButtonItem  = myCustomBackButtonItem
+        var backButton:UIButton = UIButton.buttonWithType(.Custom) as! UIButton
+        backButton.addTarget(self, action: "backButtonItemClicked:", forControlEvents: .TouchUpInside)
+        backButton.setImage(UIImage(named: "back_arrow_360"), forState: .Normal)
+        backButton.sizeToFit()
+        var backButtonItem:UIBarButtonItem = UIBarButtonItem(customView: backButton)
+        self.navigationItem.leftBarButtonItem  = backButtonItem
 
     }
     
     
-    func popToRoot() {
+    func backButtonItemClicked(sender: AnyObject) {
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
