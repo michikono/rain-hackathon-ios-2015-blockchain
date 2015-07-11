@@ -50,12 +50,7 @@ class DetailVC: UIViewController {
     }
     
     func searchButtonClicked(sender: AnyObject) {
-        
-        UIView.animateWithDuration(2.5, delay: 0.0, options: UIViewAnimationOptions.TransitionFlipFromRight, animations: { () -> Void in
             self.searchBar.hidden = false
-
-        }, completion: nil)
-       
     }
     
     

@@ -28,8 +28,14 @@ class AssetTransferVC: UIViewController {
         super.viewDidLoad()
         
         searchBar.hidden = true
-        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-
+        
+        var searchButton:UIButton = UIButton.buttonWithType(.Custom) as! UIButton
+        searchButton.addTarget(self, action: "searchButtonClicked:", forControlEvents: .TouchUpInside)
+        searchButton.setImage(UIImage(named: "search (1)"), forState: .Normal)
+        searchButton.sizeToFit()
+        var searchButtonItem:UIBarButtonItem = UIBarButtonItem(customView: searchButton)
+        self.navigationItem.rightBarButtonItem  = searchButtonItem
+        
         var backButton:UIButton = UIButton.buttonWithType(.Custom) as! UIButton
         backButton.addTarget(self, action: "backButtonItemClicked:", forControlEvents: .TouchUpInside)
         backButton.setImage(UIImage(named: "back_arrow_360"), forState: .Normal)
@@ -39,6 +45,9 @@ class AssetTransferVC: UIViewController {
 
     }
     
+    func searchButtonClicked(sender: AnyObject) {
+        self.searchBar.hidden = false
+    }
     
     func backButtonItemClicked(sender: AnyObject) {
         self.navigationController?.popToRootViewControllerAnimated(true)
@@ -76,8 +85,4 @@ class AssetTransferVC: UIViewController {
         inputView.layer.addAnimation(pulseAnimation, forKey: nil)
     }
     
-
-    @IBAction func searchButtonClicked(sender: AnyObject) {
-        searchBar.hidden = false
-    }
 }
