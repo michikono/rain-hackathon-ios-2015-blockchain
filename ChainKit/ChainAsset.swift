@@ -16,6 +16,10 @@ public struct ChainAsset {
     let definititionHash: String
     let definititionReference: [String: AnyObject]
     
+    // Info from GetBucketBalance
+    var total: Int = 0
+    var confirmed: Int = 0
+    
     public init(json: JSON) {
         assetID = json["asset_id"].stringValue
         isMutable = json["definition_mutable"].stringValue == "true" ? true : false

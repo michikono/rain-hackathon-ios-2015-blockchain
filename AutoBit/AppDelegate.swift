@@ -21,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            println("Boom success: \(chainAsset)")
 //        }
 
-//        ChainAPI.sharedInstance.getBucketBalances("aecbc268-2ed2-4143-b69c-da89c1bb9a99", completion: { () -> Void in
-//            println("Completion!")
-//        })
+//        ChainAPI.sharedInstance.getBucketBalances("aecbc268-2ed2-4143-b69c-da89c1bb9a99") { chainAssets in
+//            println("Completion!: \(chainAssets)")
+//        }
         
         return true
     }

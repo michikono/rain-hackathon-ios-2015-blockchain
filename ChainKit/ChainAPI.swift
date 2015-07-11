@@ -35,7 +35,7 @@ public class ChainAPI {
         }
     }
     
-    public func getBucketBalances(bucketID: String, completion: () -> Void) {
+    public func getBucketBalances(bucketID: String, completion: (assets: [ChainAsset]) -> Void) {
         let baseURL = "https://api.chain.com/v3/"
         
         if let url = NSURL(string: baseURL)?.URLByAppendingPathComponent("buckets").URLByAppendingPathComponent(bucketID).URLByAppendingPathComponent("balance/assets") {
@@ -49,10 +49,20 @@ public class ChainAPI {
                 println("json: \(json)")
                 println("Error: \(error)")
 
-                completion()
+                var responseArray: [ChainAsset] = []
+                
+                for dictionary in json.arrayValue {
+                    var asset = ChainAsset(json: dictionary)
+                    asset.total = dictionary["total"].intValue
+                    asset.confirmed = dictionary["confirmed"].intValue
+                    
+                    responseArray.append(asset)
+                }
+                
+                completion(assets: responseArray)
             }).resume()
         } else {
-            completion()
+            completion(assets: [])
         }
     }
     
