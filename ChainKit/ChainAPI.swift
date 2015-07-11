@@ -42,7 +42,7 @@ public class ChainAPI {
     public func getBucketBalances(bucketID: String, completion: (assets: [ChainAsset]) -> Void) {
         let baseURL = "https://api.chain.com/v3/"
         
-        if let url = NSURL(string: baseURL)?.URLByAppendingPathComponent("buckets").URLByAppendingPathComponent(bucketID).URLByAppendingPathComponent("balance/assets") {
+        if let url = NSURL(string: "https://blockchain-melody.herokuapp.com/api/buckets/")?.URLByAppendingPathComponent("aecbc268-2ed2-4143-b69c-da89c1bb9a99").URLByAppendingPathComponent("balances") {
             println("URL: \(url)")
             
             let request = authedRequestForURL(url)
@@ -54,17 +54,26 @@ public class ChainAPI {
                 println("Error: \(error)")
 
                 var responseArray: [ChainAsset] = []
+                var currentCompleted = 0
                 
                 for dictionary in json.arrayValue {
-                    var asset = ChainAsset(json: dictionary)
-                    asset.total = dictionary["total"].intValue
-                    asset.confirmed = dictionary["confirmed"].intValue
-                    
-                    responseArray.append(asset)
-                }
-                
-                dispatch_async(dispatch_get_main_queue()) {
-                    completion(assets: responseArray)
+                    ChainAPI.sharedInstance.getAsset(dictionary["asset_id"].stringValue) { chainAsset in
+                        println("Boom success: \(chainAsset)")
+                        currentCompleted++
+                        if var asset = chainAsset {
+                            asset.total = dictionary["total"].intValue
+                            asset.confirmed = dictionary["confirmed"].intValue
+                            
+                            responseArray.append(asset)
+                        }
+                        
+                        if currentCompleted >= json.arrayValue.count {
+                            dispatch_async(dispatch_get_main_queue()) {
+                                println("Sending completion!")
+                                completion(assets: responseArray)
+                            }
+                        }
+                    }
                 }
             }).resume()
         } else {
@@ -93,3 +102,17 @@ extension String {
         return base64String!
     }
 }
+
+/*
+for dictionary in json.arrayValue {
+ChainAPI.sharedInstance.getAsset(dictionary["asset_id"].stringValue) { chainAsset in
+println("Boom success: \(chainAsset)")
+if var asset = chainAsset {
+asset.total = dictionary["total"].intValue
+asset.confirmed = dictionary["confirmed"].intValue
+
+responseArray.append(asset)
+}
+}
+}
+*/

@@ -13,27 +13,70 @@ class ListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    private var assets: [[ChainAsset]] = [] {
+    private var assets: [ChainAsset] = [] {
         didSet {
+            var musicArray: [ChainAsset] = []
+            var gameArray: [ChainAsset] = []
+            var bookArray: [ChainAsset] = []
+            var movieArray: [ChainAsset] = []
+            
+            for asset in assets {
+                switch asset.assetID {
+                case "AJHuxdPxR7sTGp8RHbMPTu1u9kQam6Xova",
+                     "ALtB1Ko9YrjftEGpb6ErmTKG6YqZTvDbr3",
+                     "AJF2DU9WbA1rB695v1KDzy9Kz9SVSQfHpJ":
+                    musicArray.append(asset)
+                case "AXhsBSJNYzThQTsb5VAkCNbwrqQgFNSfk9",
+                     "ALrCM2WUrP3tr87ACVnL9qthE5JdUMKcdg",
+                     "AMQ6fYsEz1qvcMt8hdHJVhYWFCNYhD4iBM":
+                    gameArray.append(asset)
+                case "ATMQCPQB2jAkwUuM5iFo2NgbRK6cWq4GiT",
+                     "AVPJbGSjRQGsD2HrvsyPhJZt3V7VvRAnGT",
+                     "AWNxBxr8EnUD6dstjKuG3NL9yCsF2XS3N5":
+                    bookArray.append(asset)
+                case "AWw79HsBzCQGbTyDNhUAXpmr4eAX9tgm7n",
+                     "Ab1EXsyxCymEGkBDDVsrR12caAupYXvVkr",
+                     "AK5KtXKE57aGi5FhyGTu6aBXN9WdjxoN6a":
+                    movieArray.append(asset)
+                default:
+                    println("Default")
+                }
+            }
+            
+            buckets.append(musicArray)
+            buckets.append(gameArray)
+            buckets.append(movieArray)
+            buckets.append(bookArray)
+            
+            headerVC?.buckets = buckets
+            
             tableView.reloadData()
         }
     }
     
+    var buckets: [[ChainAsset]] = []
+    
+    private var headerVC: ListHeaderViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         ChainAPI.sharedInstance.getBucketBalances("aecbc268-2ed2-4143-b69c-da89c1bb9a99") { chainAssets in
             println("Completion!: \(chainAssets)")
-            self.assets = [chainAssets]
+            self.assets = chainAssets
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let headerVC = segue.destinationViewController as? ListHeaderViewController {
+            self.headerVC = headerVC
         }
     }
 }
 
 extension ListViewController: UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return assets.count
+        return buckets.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,7 +91,20 @@ extension ListViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Test"
+        switch section {
+        case 0:
+            return "Music".uppercaseString
+        case 1:
+            return "Games".uppercaseString
+        case 2:
+            return "Movies".uppercaseString
+        case 3:
+            return "Books".uppercaseString
+        case 4:
+            return "Software".uppercaseString
+        default:
+            return ""
+        }
     }
 }
 
@@ -65,17 +121,24 @@ extension ListViewController: UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let collectionView = collectionView as? IndexedCollectionView {
-//            return assets[collectionView.indexPath.item].count
-            
-            return 12
+            return buckets[collectionView.indexPath.section].count
         }
         
         return 0
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AssetCell", forIndexPath: indexPath) as! UICollectionViewCell
-                
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AssetCell", forIndexPath: indexPath) as! AssetCollectionViewCell
+        let cv = collectionView as! IndexedCollectionView
+        
+        let asset = buckets[cv.indexPath.section][indexPath.item]
+        
+        cell.nameLabel.text = asset.name
+        cell.priceLabel.text = "$\(asset.price)"
+        
+        if let stringURL = asset.imageURL, let url = NSURL(string: stringURL) {
+            cell.imageView.setImageWithUrl(url)
+        }
         return cell
     }
 }

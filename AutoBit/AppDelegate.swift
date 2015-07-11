@@ -17,14 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-//        ChainAPI.sharedInstance.getAsset("AQzWXC5YzRXCihZyDeX1ZMuYugcKzE8nnC") { chainAsset in
-//            println("Boom success: \(chainAsset)")
-//        }
-
-//        ChainAPI.sharedInstance.getBucketBalances("aecbc268-2ed2-4143-b69c-da89c1bb9a99") { chainAssets in
-//            println("Completion!: \(chainAssets)")
-//        }
-        
         return true
     }
 

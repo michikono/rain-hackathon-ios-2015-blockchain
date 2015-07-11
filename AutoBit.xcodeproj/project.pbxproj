@@ -24,6 +24,9 @@
 		0402C91E1B5182F5008CAE77 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402C91D1B5182F5008CAE77 /* ListTableViewCell.swift */; };
 		0402C9201B51832E008CAE77 /* IndexedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402C91F1B51832E008CAE77 /* IndexedCollectionView.swift */; };
 		0402C9241B51931E008CAE77 /* ListHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402C9231B51931E008CAE77 /* ListHeaderViewController.swift */; };
+		0402C9261B51A7B2008CAE77 /* AssetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402C9251B51A7B2008CAE77 /* AssetCollectionViewCell.swift */; };
+		0402C92C1B51AAF0008CAE77 /* UIImageView+AFNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402C92B1B51AAF0008CAE77 /* UIImageView+AFNetworking.swift */; };
+		0402C92E1B51AD17008CAE77 /* TypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402C92D1B51AD17008CAE77 /* TypeCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,9 @@
 		0402C91D1B5182F5008CAE77 /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		0402C91F1B51832E008CAE77 /* IndexedCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexedCollectionView.swift; sourceTree = "<group>"; };
 		0402C9231B51931E008CAE77 /* ListHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListHeaderViewController.swift; sourceTree = "<group>"; };
+		0402C9251B51A7B2008CAE77 /* AssetCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetCollectionViewCell.swift; sourceTree = "<group>"; };
+		0402C92B1B51AAF0008CAE77 /* UIImageView+AFNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+AFNetworking.swift"; sourceTree = "<group>"; };
+		0402C92D1B51AD17008CAE77 /* TypeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,8 @@
 				0402C8CE1B50A7A8008CAE77 /* ViewController.swift */,
 				0402C91B1B517BE5008CAE77 /* ListViewController.swift */,
 				0402C91D1B5182F5008CAE77 /* ListTableViewCell.swift */,
+				0402C9251B51A7B2008CAE77 /* AssetCollectionViewCell.swift */,
+				0402C92D1B51AD17008CAE77 /* TypeCollectionViewCell.swift */,
 				0402C91F1B51832E008CAE77 /* IndexedCollectionView.swift */,
 				0402C9231B51931E008CAE77 /* ListHeaderViewController.swift */,
 				0402C9191B517B3A008CAE77 /* ListScreen.storyboard */,
@@ -177,6 +185,7 @@
 				0402C9131B50B13B008CAE77 /* SwiftyJSON.swift */,
 				0402C9111B50A985008CAE77 /* ChainAPI.swift */,
 				0402C9151B50BF10008CAE77 /* ChainAsset.swift */,
+				0402C92B1B51AAF0008CAE77 /* UIImageView+AFNetworking.swift */,
 				0402C8F31B50A808008CAE77 /* Supporting Files */,
 			);
 			path = ChainKit;
@@ -337,6 +346,8 @@
 				0402C91E1B5182F5008CAE77 /* ListTableViewCell.swift in Sources */,
 				0402C8CD1B50A7A8008CAE77 /* AppDelegate.swift in Sources */,
 				0402C9241B51931E008CAE77 /* ListHeaderViewController.swift in Sources */,
+				0402C92E1B51AD17008CAE77 /* TypeCollectionViewCell.swift in Sources */,
+				0402C9261B51A7B2008CAE77 /* AssetCollectionViewCell.swift in Sources */,
 				0402C91C1B517BE5008CAE77 /* ListViewController.swift in Sources */,
 				0402C9201B51832E008CAE77 /* IndexedCollectionView.swift in Sources */,
 			);
@@ -357,6 +368,7 @@
 				0402C9181B50DDD6008CAE77 /* ChainAPI.swift in Sources */,
 				0402C9161B50BF10008CAE77 /* ChainAsset.swift in Sources */,
 				0402C9141B50B13B008CAE77 /* SwiftyJSON.swift in Sources */,
+				0402C92C1B51AAF0008CAE77 /* UIImageView+AFNetworking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

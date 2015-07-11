@@ -9,16 +9,23 @@
 import Foundation
 
 public struct ChainAsset {
-    let assetID: String
-    let isMutable: Bool
-    let definititionURL: String
-    let definititionBase64: String
-    let definititionHash: String
-    let definititionReference: [String: AnyObject]
+    public let assetID: String
+    public let isMutable: Bool
+    public let definititionURL: String
+    public let definititionBase64: String
+    public let definititionHash: String
+    public let definitionReference: [String: AnyObject]
+    
+    public let name: String?
+    public let nameShort: String?
+    public let imageURL: String?
+    public let description: String?
     
     // Info from GetBucketBalance
-    var total: Int = 0
-    var confirmed: Int = 0
+    public var total: Int = 0
+    public var confirmed: Int = 0
+    
+    public let price: Int
     
     public init(json: JSON) {
         assetID = json["asset_id"].stringValue
@@ -28,9 +35,19 @@ public struct ChainAsset {
         definititionHash = json["definition_hash"].stringValue
         
         if let dictionary = json["definition_reference"].dictionaryObject {
-            definititionReference = dictionary
+            definitionReference = dictionary
+            name = definitionReference["name"] as? String
+            nameShort = definitionReference["name_short"] as? String
+            imageURL = definitionReference["image_url"] as? String
+            description = definitionReference["description"] as? String
         } else {
-            definititionReference = [:]
+            definitionReference = [:]
+            name = nil
+            nameShort = nil
+            imageURL = nil
+            description = nil
         }
+        
+        price = Int(arc4random() % 20) + 5
     }
 }
