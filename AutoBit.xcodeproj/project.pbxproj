@@ -19,6 +19,7 @@
 		0402C9141B50B13B008CAE77 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402C9131B50B13B008CAE77 /* SwiftyJSON.swift */; };
 		0402C9161B50BF10008CAE77 /* ChainAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402C9151B50BF10008CAE77 /* ChainAsset.swift */; };
 		0402C9181B50DDD6008CAE77 /* ChainAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402C9111B50A985008CAE77 /* ChainAPI.swift */; };
+		7C1FB50A1B51092B002E7802 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1FB5091B51092B002E7802 /* DetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		0402C9111B50A985008CAE77 /* ChainAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainAPI.swift; sourceTree = "<group>"; };
 		0402C9131B50B13B008CAE77 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		0402C9151B50BF10008CAE77 /* ChainAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainAsset.swift; sourceTree = "<group>"; };
+		7C1FB5091B51092B002E7802 /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +122,8 @@
 		0402C8C91B50A7A8008CAE77 /* AutoBit */ = {
 			isa = PBXGroup;
 			children = (
+				7C1FB50B1B510B46002E7802 /* ViewControllers */,
 				0402C8CC1B50A7A8008CAE77 /* AppDelegate.swift */,
-				0402C8CE1B50A7A8008CAE77 /* ViewController.swift */,
 				0402C8D01B50A7A8008CAE77 /* Main.storyboard */,
 				0402C8D31B50A7A8008CAE77 /* Images.xcassets */,
 				0402C8D51B50A7A8008CAE77 /* LaunchScreen.xib */,
@@ -173,6 +175,15 @@
 				0402C8F41B50A808008CAE77 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7C1FB50B1B510B46002E7802 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0402C8CE1B50A7A8008CAE77 /* ViewController.swift */,
+				7C1FB5091B51092B002E7802 /* DetailVC.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +330,7 @@
 			files = (
 				0402C8CF1B50A7A8008CAE77 /* ViewController.swift in Sources */,
 				0402C8CD1B50A7A8008CAE77 /* AppDelegate.swift in Sources */,
+				7C1FB50A1B51092B002E7802 /* DetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,6 +586,7 @@
 				0402C8E81B50A7A8008CAE77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0402C8E91B50A7A8008CAE77 /* Build configuration list for PBXNativeTarget "AutoBitTests" */ = {
 			isa = XCConfigurationList;
@@ -582,6 +595,7 @@
 				0402C8EB1B50A7A8008CAE77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0402C90A1B50A808008CAE77 /* Build configuration list for PBXNativeTarget "ChainKit" */ = {
 			isa = XCConfigurationList;
@@ -590,6 +604,7 @@
 				0402C90C1B50A808008CAE77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
