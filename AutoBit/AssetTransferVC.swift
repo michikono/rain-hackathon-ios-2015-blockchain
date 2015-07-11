@@ -68,7 +68,7 @@ class AssetTransferVC: UIViewController {
                     }, completion: nil)
         }
         
-        UIView.animateWithDuration(5.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
+        UIView.animateWithDuration(8.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
             self.leftImageView.alpha = 0.2
             self.rightImageView.alpha = 1.0
             }) { (Bool) -> Void in
