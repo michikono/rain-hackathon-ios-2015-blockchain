@@ -40,7 +40,7 @@ class DetailVC: UIViewController {
         
         var searchButton:UIButton = UIButton.buttonWithType(.Custom) as! UIButton
         searchButton.addTarget(self, action: "searchButtonClicked:", forControlEvents: .TouchUpInside)
-        searchButton.setImage(UIImage(named: "search (1)"), forState: .Normal)
+        searchButton.setImage(UIImage(named: "search_sm_360"), forState: .Normal)
         searchButton.sizeToFit()
         var searchButtonItem:UIBarButtonItem = UIBarButtonItem(customView: searchButton)
         self.navigationItem.rightBarButtonItem  = searchButtonItem
