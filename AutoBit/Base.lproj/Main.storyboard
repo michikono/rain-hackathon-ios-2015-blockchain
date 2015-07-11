@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rF8-Gm-lq4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jdc-ws-u3E">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -7,9 +7,9 @@
     <customFonts key="customFonts">
         <mutableArray key="ProximaNova-Light.otf">
             <string>ProximaNova-Light</string>
+            <string>ProximaNova-Light</string>
         </mutableArray>
         <mutableArray key="ProximaNovaCond-Semibold.otf">
-            <string>ProximaNovaCond-Semibold</string>
             <string>ProximaNovaCond-Semibold</string>
             <string>ProximaNovaCond-Semibold</string>
             <string>ProximaNovaCond-Semibold</string>
@@ -28,12 +28,21 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11b-WD-oKq">
+                                <rect key="frame" x="16" y="167" width="249" height="38"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
+                                <state key="normal" title="temperory button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="rF8-Gm-lq4" kind="show" id="jqF-ll-XAM"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="gLn-SP-SmT"/>
-                    <connections>
-                        <segue destination="rF8-Gm-lq4" kind="show" id="aID-Od-oYq"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -51,10 +60,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xrN-Dw-igT">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iq84_large" translatesAutoresizingMaskIntoConstraints="NO" id="xrN-Dw-igT">
                                 <rect key="frame" x="-5" y="64" width="611" height="304"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3AA-tZ-QJy">
+                                <rect key="frame" x="217" y="539" width="167" height="30"/>
+                                <color key="backgroundColor" red="0.066666666666666666" green="0.42745098039215684" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Xp0-6F-1ZH"/>
+                                    <constraint firstAttribute="width" constant="167" id="xNQ-JQ-gXr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="20"/>
+                                <state key="normal" title="Transfer Asset">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tansferAssetButtonClicked:" destination="rF8-Gm-lq4" eventType="touchUpInside" id="hma-Zm-bzn"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwo-Tj-aZF">
                                 <rect key="frame" x="16" y="381" width="423" height="38"/>
                                 <color key="backgroundColor" red="0.86248289229999997" green="0.7531934307" blue="0.96855041060000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -62,7 +87,7 @@
                                     <constraint firstAttribute="height" constant="38" id="cEX-jG-Opq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ProximaNovaCond-Semibold" family="Proxima Nova Condensed" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.22352941176470587" green="0.22352941176470587" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmf-wh-Gu3">
@@ -82,8 +107,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="tRu-bF-fC0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ProximaNovaCond-Semibold" family="Proxima Nova Condensed" pointSize="25"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="25"/>
+                                <color key="textColor" red="0.41176470588235292" green="0.41176470588235292" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ASSET ACQUIRED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrL-w8-Reg">
@@ -93,7 +118,7 @@
                                     <constraint firstAttribute="height" constant="21" id="cuQ-df-QGg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ProximaNovaCond-Semibold" family="Proxima Nova Condensed" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGG-xs-GP8">
@@ -103,31 +128,32 @@
                                     <constraint firstAttribute="height" constant="21" id="bzX-p0-scl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ProximaNovaCond-Semibold" family="Proxima Nova Condensed" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.72941176470588232" green="0.72941176470588232" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3AA-tZ-QJy">
-                                <rect key="frame" x="217" y="539" width="167" height="30"/>
-                                <color key="backgroundColor" red="0.066666666666666666" green="0.42745098039215684" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Xp0-6F-1ZH"/>
-                                    <constraint firstAttribute="width" constant="167" id="xNQ-JQ-gXr"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="20"/>
-                                <state key="normal" title="Transfer Asset">
-                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDD-gP-WgA">
+                                <rect key="frame" x="548" y="20" width="36" height="36"/>
+                                <state key="normal" title="Search" image="search (1)" backgroundImage="search (1)">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="tansferAssetButtonClicked:" destination="rF8-Gm-lq4" eventType="touchUpInside" id="hma-Zm-bzn"/>
+                                    <action selector="searchButtonClicked:" destination="rF8-Gm-lq4" eventType="touchUpInside" id="gAo-hx-38O"/>
                                 </connections>
                             </button>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="tiM-iy-5cR">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="rYU-U5-031" secondAttribute="trailing" constant="60" id="0NY-9s-Rlp"/>
+                            <constraint firstItem="tiM-iy-5cR" firstAttribute="leading" secondItem="9GF-WQ-kyF" secondAttribute="leading" id="6ad-HT-fnT"/>
                             <constraint firstItem="wrL-w8-Reg" firstAttribute="leading" secondItem="dGG-xs-GP8" secondAttribute="leading" id="CCm-fy-3sG"/>
                             <constraint firstItem="rYU-U5-031" firstAttribute="top" secondItem="tmf-wh-Gu3" secondAttribute="bottom" constant="8" id="Dft-UM-3iF"/>
+                            <constraint firstItem="tiM-iy-5cR" firstAttribute="top" secondItem="xrN-Dw-igT" secondAttribute="top" id="DhH-BU-Mm1"/>
+                            <constraint firstItem="tiM-iy-5cR" firstAttribute="centerX" secondItem="xrN-Dw-igT" secondAttribute="centerX" id="E0L-zG-fjc"/>
                             <constraint firstItem="Bwo-Tj-aZF" firstAttribute="top" secondItem="xrN-Dw-igT" secondAttribute="bottom" constant="13" id="EAu-iN-ZtL"/>
                             <constraint firstItem="xrN-Dw-igT" firstAttribute="top" secondItem="eVX-Ze-Lby" secondAttribute="bottom" id="EEt-1X-9kg"/>
                             <constraint firstItem="tmf-wh-Gu3" firstAttribute="trailing" secondItem="wrL-w8-Reg" secondAttribute="trailing" id="Iqf-SM-iqn"/>
@@ -154,6 +180,8 @@
                         <outlet property="imageView" destination="xrN-Dw-igT" id="F6X-e7-eLZ"/>
                         <outlet property="monthYearLabel" destination="dGG-xs-GP8" id="h9r-VV-04x"/>
                         <outlet property="nameLabel" destination="rYU-U5-031" id="uSk-C0-Bqd"/>
+                        <outlet property="searchBar" destination="tiM-iy-5cR" id="KYU-Ge-NdS"/>
+                        <outlet property="searchButton" destination="cDD-gP-WgA" id="sFe-U0-fi2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8J-qB-jnI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -168,6 +196,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gy2-10-SXO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.17254901960784313" green="0.1803921568627451" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -179,4 +208,8 @@
             <point key="canvasLocation" x="310" y="-388"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="iq84_large" width="800" height="800"/>
+        <image name="search (1)" width="66" height="68"/>
+    </resources>
 </document>
