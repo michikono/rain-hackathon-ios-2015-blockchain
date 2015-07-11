@@ -26,10 +26,17 @@ class DetailVC: UIViewController {
         
         searchBar.hidden = true
 
-        balanceLabel.text = "$28"
-        idLabel.text = "IQ84"
-        monthYearLabel.text = "March 2013"
-        nameLabel.text  = "Haruki Marakami 2013"
+        if let asset = asset {
+            balanceLabel.text = "$\(asset.price)"
+            idLabel.text = asset.name
+            monthYearLabel.text = "March 2013"
+            nameLabel.text  = "Haruki Marakami 2013"
+            
+            if let stringURL = asset.imageURL, let url = NSURL(string: stringURL) {
+                imageView.setImageWithUrl(url)
+            }
+
+        }
         
         var searchButton:UIButton = UIButton.buttonWithType(.Custom) as! UIButton
         searchButton.addTarget(self, action: "searchButtonClicked:", forControlEvents: .TouchUpInside)
