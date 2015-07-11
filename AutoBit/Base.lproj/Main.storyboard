@@ -34,7 +34,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iq84_large" translatesAutoresizingMaskIntoConstraints="NO" id="xrN-Dw-igT">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="iq84_large" translatesAutoresizingMaskIntoConstraints="NO" id="xrN-Dw-igT">
                                 <rect key="frame" x="-5" y="64" width="611" height="304"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
@@ -51,6 +51,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="transferPressed" destination="rF8-Gm-lq4" eventType="touchUpInside" id="aPP-7w-2E1"/>
                                     <segue destination="jfm-08-4wY" kind="show" id="d0L-wd-0LY"/>
                                 </connections>
                             </button>
@@ -105,17 +106,7 @@
                                 <color key="textColor" red="0.72941176470588232" green="0.72941176470588232" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDD-gP-WgA">
-                                <rect key="frame" x="548" y="20" width="36" height="36"/>
-                                <state key="normal" image="search (1)" backgroundImage="search (1)">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="searchButtonClicked:" destination="rF8-Gm-lq4" eventType="touchUpInside" id="gAo-hx-38O"/>
-                                </connections>
-                            </button>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="tiM-iy-5cR">
+                            <searchBar contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tiM-iy-5cR">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -155,7 +146,6 @@
                         <outlet property="monthYearLabel" destination="dGG-xs-GP8" id="h9r-VV-04x"/>
                         <outlet property="nameLabel" destination="rYU-U5-031" id="uSk-C0-Bqd"/>
                         <outlet property="searchBar" destination="tiM-iy-5cR" id="KYU-Ge-NdS"/>
-                        <outlet property="searchButton" destination="cDD-gP-WgA" id="sFe-U0-fi2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8J-qB-jnI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -165,7 +155,7 @@
         <!--Asset TransferVC-->
         <scene sceneID="3F8-dG-CgM">
             <objects>
-                <viewController id="jfm-08-4wY" customClass="AssetTransferVC" customModule="AutoBit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AssetTransferVC" id="jfm-08-4wY" customClass="AssetTransferVC" customModule="AutoBit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aex-rd-3mk"/>
                         <viewControllerLayoutGuide type="bottom" id="mG0-of-JSc"/>
@@ -174,13 +164,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iq84_large" translatesAutoresizingMaskIntoConstraints="NO" id="ua1-ck-tqh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="iq84_large" translatesAutoresizingMaskIntoConstraints="NO" id="ua1-ck-tqh">
                                 <rect key="frame" x="16" y="64" width="280" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" priority="250" constant="280" id="Wfs-PL-fk9"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iq84_large" translatesAutoresizingMaskIntoConstraints="NO" id="0Yd-DR-HZI">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="iq84_large" translatesAutoresizingMaskIntoConstraints="NO" id="0Yd-DR-HZI">
                                 <rect key="frame" x="304" y="64" width="280" height="200"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mine" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbP-hD-Kbf">
@@ -206,7 +196,7 @@
                                     <constraint firstAttribute="width" constant="107" id="Doy-eF-6ds"/>
                                 </constraints>
                             </imageView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="WGb-d7-rBE">
+                            <searchBar contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WGb-d7-rBE">
                                 <rect key="frame" x="0.0" y="64" width="600" height="0.0"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>

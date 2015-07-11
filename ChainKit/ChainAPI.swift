@@ -83,6 +83,24 @@ public class ChainAPI {
         }
     }
     
+    public func transferAsset(assetID: String, outputBucketID: String, inputBucketID: String, completion: (success: Bool) -> Void) {
+        if let url = NSURL(string: "https://blockchain-melody.herokuapp.com/api/transfers") {
+            println("URL: \(url)")
+            
+            var params = ["assetId": assetID, "inputBucketId": inputBucketID, "outputBucketId": outputBucketID]
+            let myThing = request(Method.POST, "https://blockchain-melody.herokuapp.com/api/transfers", parameters: params, encoding: ParameterEncoding.URL)
+
+            myThing.responseJSON { (_, _, JSON, _) in
+                println("JSON: \(JSON)")
+                completion(success: true)
+            }
+        } else {
+            dispatch_async(dispatch_get_main_queue()) {
+                completion(success: false)
+            }
+        }
+    }
+    
     private func authedRequestForURL(url: NSURL) -> NSMutableURLRequest {
         var request = NSMutableURLRequest(URL: url)
         
@@ -102,6 +120,8 @@ extension String {
         return base64String!
     }
 }
+
+
 
 /*
 for dictionary in json.arrayValue {

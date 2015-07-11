@@ -19,6 +19,7 @@ class ListViewController: UIViewController {
             var gameArray: [ChainAsset] = []
             var bookArray: [ChainAsset] = []
             var movieArray: [ChainAsset] = []
+            buckets.removeAll(keepCapacity: false)
             
             for asset in assets {
                 switch asset.assetID {
@@ -60,7 +61,11 @@ class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
         ChainAPI.sharedInstance.getBucketBalances("aecbc268-2ed2-4143-b69c-da89c1bb9a99") { chainAssets in
             println("Completion!: \(chainAssets)")
             self.assets = chainAssets
@@ -166,6 +171,7 @@ extension ListViewController: UICollectionViewDelegate {
         let asset = buckets[cv.indexPath.section][indexPath.item]
         
         let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! DetailVC
+        detailVC.asset = asset
         navigationController?.pushViewController(detailVC, animated: true)
     }
 }

@@ -8,10 +8,10 @@
 
 import Foundation
 import UIKit
+import ChainKit
 
 class DetailVC: UIViewController {
     
-    @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var monthYearLabel: UILabel!
@@ -19,6 +19,7 @@ class DetailVC: UIViewController {
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
+    var asset: ChainAsset?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,35 +30,37 @@ class DetailVC: UIViewController {
         idLabel.text = "IQ84"
         monthYearLabel.text = "March 2013"
         nameLabel.text  = "Haruki Marakami 2013"
-       
-        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-//        var leftButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
-//        leftButton.setImage(UIImage(named: "back_arrow_360"), forState: UIControlState.Normal)
-//        leftButton.setImage(UIImage(named: "back_arrow_360"), forState: UIControlState.Selected)
-//        leftButton.addTarget(self, action: "backButtonClicked", forControlEvents: UIControlEvents.TouchUpInside)
-//        
-//        let leftBarButton = UIBarButtonItem()
-//        leftBarButton.customView = leftButton
-//        self.navigationItem.leftBarButtonItem = leftBarButton
         
-        var barButton = UIBarButtonItem()
-        barButton.customView = searchButton
+        var searchButton:UIButton = UIButton.buttonWithType(.Custom) as! UIButton
+        searchButton.addTarget(self, action: "searchButtonClicked:", forControlEvents: .TouchUpInside)
+        searchButton.setImage(UIImage(named: "search (1)"), forState: .Normal)
+        searchButton.sizeToFit()
+        var searchButtonItem:UIBarButtonItem = UIBarButtonItem(customView: searchButton)
+        self.navigationItem.rightBarButtonItem  = searchButtonItem
         
-        self.navigationItem.rightBarButtonItem = barButton
+        var backButton:UIButton = UIButton.buttonWithType(.Custom) as! UIButton
+        backButton.addTarget(self, action: "backButtonItemClicked:", forControlEvents: .TouchUpInside)
+        backButton.setImage(UIImage(named: "back_arrow_360"), forState: .Normal)
+        backButton.sizeToFit()
+        var backButtonItem:UIBarButtonItem = UIBarButtonItem(customView: backButton)
+        self.navigationItem.leftBarButtonItem  = backButtonItem
+        
     }
     
-    func backButtonClicked() {
+    func backButtonItemClicked(sender: AnyObject) {
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
-    @IBAction func searchButtonClicked(sender: AnyObject) {
-        
-        UIView.animateWithDuration(2.5, delay: 0.0, options: UIViewAnimationOptions.TransitionFlipFromRight, animations: { () -> Void in
+    func searchButtonClicked(sender: AnyObject) {
             self.searchBar.hidden = false
-
-        }, completion: nil)
-       
     }
     
-    
+    @IBAction func transferPressed() {
+        if let asset = asset {
+            ChainAPI.sharedInstance.transferAsset(asset.assetID, outputBucketID: "d4840e4e-4768-41db-9e57-1fe13098fb4f", inputBucketID: "aecbc268-2ed2-4143-b69c-da89c1bb9a99") { success in
+                
+                print("Eric! Success? \(success)")
+            }
+        }
+    }
 }

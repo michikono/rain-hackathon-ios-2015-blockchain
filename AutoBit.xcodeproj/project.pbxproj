@@ -30,6 +30,17 @@
 		0402C9301B51C817008CAE77 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0402C92F1B51C817008CAE77 /* ProximaNova-Regular.otf */; };
 		0402C9321B51C868008CAE77 /* ProximaNova-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0402C9311B51C868008CAE77 /* ProximaNova-Semibold.otf */; };
 		0402C9361B51CE26008CAE77 /* ProximaNova-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0402C9351B51CE26008CAE77 /* ProximaNova-Light.otf */; };
+		0402C9431B51D3FB008CAE77 /* Alamofire.h in Headers */ = {isa = PBXBuildFile; fileRef = 0402C9381B51D3FB008CAE77 /* Alamofire.h */; };
+		0402C9441B51D3FB008CAE77 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402C9391B51D3FB008CAE77 /* Alamofire.swift */; };
+		0402C9451B51D3FB008CAE77 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402C93A1B51D3FB008CAE77 /* Download.swift */; };
+		0402C9461B51D3FB008CAE77 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0402C93B1B51D3FB008CAE77 /* Info.plist */; };
+		0402C9471B51D3FB008CAE77 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402C93C1B51D3FB008CAE77 /* Manager.swift */; };
+		0402C9481B51D3FB008CAE77 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402C93D1B51D3FB008CAE77 /* MultipartFormData.swift */; };
+		0402C9491B51D3FB008CAE77 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402C93E1B51D3FB008CAE77 /* ParameterEncoding.swift */; };
+		0402C94A1B51D3FB008CAE77 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402C93F1B51D3FB008CAE77 /* Request.swift */; };
+		0402C94B1B51D3FB008CAE77 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402C9401B51D3FB008CAE77 /* ResponseSerialization.swift */; };
+		0402C94C1B51D3FB008CAE77 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402C9411B51D3FB008CAE77 /* Upload.swift */; };
+		0402C94D1B51D3FB008CAE77 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402C9421B51D3FB008CAE77 /* Validation.swift */; };
 		7C1FB50A1B51092B002E7802 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1FB5091B51092B002E7802 /* DetailVC.swift */; };
 		7C9618B61B5164DE00B2C069 /* ProximaNovaCond-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C9618B21B5164DE00B2C069 /* ProximaNovaCond-Semibold.otf */; };
 		7C9618B71B5164DE00B2C069 /* ProximaNovaCond-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C9618B21B5164DE00B2C069 /* ProximaNovaCond-Semibold.otf */; };
@@ -105,6 +116,17 @@
 		0402C92F1B51C817008CAE77 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
 		0402C9311B51C868008CAE77 /* ProximaNova-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Semibold.otf"; sourceTree = "<group>"; };
 		0402C9351B51CE26008CAE77 /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Light.otf"; sourceTree = "<group>"; };
+		0402C9381B51D3FB008CAE77 /* Alamofire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alamofire.h; sourceTree = "<group>"; };
+		0402C9391B51D3FB008CAE77 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		0402C93A1B51D3FB008CAE77 /* Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
+		0402C93B1B51D3FB008CAE77 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0402C93C1B51D3FB008CAE77 /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		0402C93D1B51D3FB008CAE77 /* MultipartFormData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartFormData.swift; sourceTree = "<group>"; };
+		0402C93E1B51D3FB008CAE77 /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		0402C93F1B51D3FB008CAE77 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		0402C9401B51D3FB008CAE77 /* ResponseSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSerialization.swift; sourceTree = "<group>"; };
+		0402C9411B51D3FB008CAE77 /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
+		0402C9421B51D3FB008CAE77 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		7C1FB5091B51092B002E7802 /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		7C9618B21B5164DE00B2C069 /* ProximaNovaCond-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNovaCond-Semibold.otf"; sourceTree = "<group>"; };
 		7C9618B31B5164DE00B2C069 /* ProximaNovaCond-RegularIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNovaCond-RegularIt.otf"; sourceTree = "<group>"; };
@@ -219,6 +241,7 @@
 				0402C9111B50A985008CAE77 /* ChainAPI.swift */,
 				0402C9151B50BF10008CAE77 /* ChainAsset.swift */,
 				0402C92B1B51AAF0008CAE77 /* UIImageView+AFNetworking.swift */,
+				0402C9371B51D3FB008CAE77 /* Source */,
 				0402C8F31B50A808008CAE77 /* Supporting Files */,
 			);
 			path = ChainKit;
@@ -230,6 +253,24 @@
 				0402C8F41B50A808008CAE77 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0402C9371B51D3FB008CAE77 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				0402C9381B51D3FB008CAE77 /* Alamofire.h */,
+				0402C9391B51D3FB008CAE77 /* Alamofire.swift */,
+				0402C93A1B51D3FB008CAE77 /* Download.swift */,
+				0402C93B1B51D3FB008CAE77 /* Info.plist */,
+				0402C93C1B51D3FB008CAE77 /* Manager.swift */,
+				0402C93D1B51D3FB008CAE77 /* MultipartFormData.swift */,
+				0402C93E1B51D3FB008CAE77 /* ParameterEncoding.swift */,
+				0402C93F1B51D3FB008CAE77 /* Request.swift */,
+				0402C9401B51D3FB008CAE77 /* ResponseSerialization.swift */,
+				0402C9411B51D3FB008CAE77 /* Upload.swift */,
+				0402C9421B51D3FB008CAE77 /* Validation.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 		7C1FB50B1B510B46002E7802 /* ViewControllers */ = {
@@ -259,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0402C8F61B50A808008CAE77 /* ChainKit.h in Headers */,
+				0402C9431B51D3FB008CAE77 /* Alamofire.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +435,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0402C9461B51D3FB008CAE77 /* Info.plist in Resources */,
 				7C9618C11B5164DE00B2C069 /* ProximaNova-BoldIt.otf in Resources */,
 				7C9618BB1B5164DE00B2C069 /* ProximaNovaCond-RegularIt.otf in Resources */,
 				7C9618B81B5164DE00B2C069 /* ProximaNovaCond-Semibold.otf in Resources */,
@@ -432,10 +475,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0402C9441B51D3FB008CAE77 /* Alamofire.swift in Sources */,
 				0402C9181B50DDD6008CAE77 /* ChainAPI.swift in Sources */,
+				0402C9491B51D3FB008CAE77 /* ParameterEncoding.swift in Sources */,
 				0402C9161B50BF10008CAE77 /* ChainAsset.swift in Sources */,
+				0402C94A1B51D3FB008CAE77 /* Request.swift in Sources */,
+				0402C9471B51D3FB008CAE77 /* Manager.swift in Sources */,
+				0402C94D1B51D3FB008CAE77 /* Validation.swift in Sources */,
+				0402C94C1B51D3FB008CAE77 /* Upload.swift in Sources */,
 				7C9618C51B51962600B2C069 /* AssetTransferVC.swift in Sources */,
+				0402C94B1B51D3FB008CAE77 /* ResponseSerialization.swift in Sources */,
 				0402C9141B50B13B008CAE77 /* SwiftyJSON.swift in Sources */,
+				0402C9481B51D3FB008CAE77 /* MultipartFormData.swift in Sources */,
+				0402C9451B51D3FB008CAE77 /* Download.swift in Sources */,
 				0402C92C1B51AAF0008CAE77 /* UIImageView+AFNetworking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
