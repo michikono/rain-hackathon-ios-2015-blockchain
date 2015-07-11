@@ -26,7 +26,7 @@ class AssetTransferVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         searchBar.hidden = true
         
         var searchButton:UIButton = UIButton.buttonWithType(.Custom) as! UIButton
@@ -56,33 +56,25 @@ class AssetTransferVC: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-//        grayArrow.center = CGPointMake(CGRectGetMaxX(leftLabel.bounds), CGRectGetMidY(leftLabel.frame))
-        
-        
-        pulseAnimation(inputView: leftImageView, fromValue: 1.0, toValue: 0.3)
-        
+        leftImageView.alpha = 1.0
+        self.rightImageView.alpha = 0.2
+
         UIView.animateWithDuration(2.0, delay: 0, options: UIViewAnimationOptions.Repeat, animations: { () -> Void in
             self.grayArrow.center = CGPointMake(CGRectGetMinX(self.rightLabel.frame), CGRectGetMidY(self.rightLabel.frame))
-        }) { (Bool) -> Void in
-            UIView.animateWithDuration(2.0, delay: 0, options: UIViewAnimationOptions.Repeat, animations: { () -> Void in
-                self.grayArrow.center = CGPointMake(CGRectGetMaxX(self.leftLabel.bounds) + 15, CGRectGetMidY(self.leftLabel.frame))
-
-            }, completion: nil)
+            }) { (Bool) -> Void in
+                UIView.animateWithDuration(2.0, delay: 0, options: UIViewAnimationOptions.Repeat, animations: { () -> Void in
+                    self.grayArrow.center = CGPointMake(CGRectGetMaxX(self.leftLabel.bounds) + 15, CGRectGetMidY(self.leftLabel.frame))
+                    
+                    }, completion: nil)
         }
         
-        pulseAnimation(inputView: rightImageView, fromValue: 0.3, toValue: 1.0)
-        
+        UIView.animateWithDuration(8.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
+            self.leftImageView.alpha = 0.2
+            self.rightImageView.alpha = 1.0
+            }) { (Bool) -> Void in
+                self.navigationController?.popToRootViewControllerAnimated(true)
+        }
     }
     
-    func pulseAnimation(#inputView: UIView , fromValue: Double, toValue: Double) {
-        var pulseAnimation:CABasicAnimation = CABasicAnimation(keyPath: "opacity");
-        pulseAnimation.duration = 2.0
-        pulseAnimation.fromValue = NSNumber(float: Float(fromValue))
-        pulseAnimation.toValue = NSNumber(float: Float(toValue))
-        pulseAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        pulseAnimation.autoreverses = true
-        pulseAnimation.repeatCount = FLT_MAX
-        inputView.layer.addAnimation(pulseAnimation, forKey: nil)
-    }
     
 }
