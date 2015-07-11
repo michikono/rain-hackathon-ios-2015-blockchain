@@ -90,21 +90,35 @@ extension ListViewController: UITableViewDataSource {
         return cell
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: 20))
+        headerView.backgroundColor = UIColor.clearColor()
+        
+        let label = UILabel(frame: CGRect(x: 12, y: 8, width: headerView.bounds.width - 24, height: headerView.bounds.height-10))
+        label.font = UIFont.boldSystemFontOfSize(13)
+        label.autoresizingMask = .FlexibleHeight | .FlexibleWidth
+        headerView.addSubview(label)
+        
         switch section {
         case 0:
-            return "Music".uppercaseString
+            label.text = "Music".uppercaseString
         case 1:
-            return "Games".uppercaseString
+            label.text = "Games".uppercaseString
         case 2:
-            return "Movies".uppercaseString
+            label.text = "Movies".uppercaseString
         case 3:
-            return "Books".uppercaseString
+            label.text = "Books".uppercaseString
         case 4:
-            return "Software".uppercaseString
+            label.text = "Software".uppercaseString
         default:
-            return ""
+            label.text = ""
         }
+        
+        return headerView
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
     }
 }
 
@@ -144,5 +158,8 @@ extension ListViewController: UICollectionViewDataSource {
 }
 
 extension ListViewController: UICollectionViewDelegate {
-    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        // Need to push now
+        collectionView.deselectItemAtIndexPath(indexPath, animated: true)
+    }
 }

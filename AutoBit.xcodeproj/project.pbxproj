@@ -27,6 +27,9 @@
 		0402C9261B51A7B2008CAE77 /* AssetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402C9251B51A7B2008CAE77 /* AssetCollectionViewCell.swift */; };
 		0402C92C1B51AAF0008CAE77 /* UIImageView+AFNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402C92B1B51AAF0008CAE77 /* UIImageView+AFNetworking.swift */; };
 		0402C92E1B51AD17008CAE77 /* TypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402C92D1B51AD17008CAE77 /* TypeCollectionViewCell.swift */; };
+		0402C9301B51C817008CAE77 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0402C92F1B51C817008CAE77 /* ProximaNova-Regular.otf */; };
+		0402C9321B51C868008CAE77 /* ProximaNova-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0402C9311B51C868008CAE77 /* ProximaNova-Semibold.otf */; };
+		0402C9341B51C870008CAE77 /* ProximaNova-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0402C9331B51C870008CAE77 /* ProximaNova-Light.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,9 @@
 		0402C9251B51A7B2008CAE77 /* AssetCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetCollectionViewCell.swift; sourceTree = "<group>"; };
 		0402C92B1B51AAF0008CAE77 /* UIImageView+AFNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+AFNetworking.swift"; sourceTree = "<group>"; };
 		0402C92D1B51AD17008CAE77 /* TypeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeCollectionViewCell.swift; sourceTree = "<group>"; };
+		0402C92F1B51C817008CAE77 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
+		0402C9311B51C868008CAE77 /* ProximaNova-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Semibold.otf"; sourceTree = "<group>"; };
+		0402C9331B51C870008CAE77 /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Light.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +162,9 @@
 		0402C8CA1B50A7A8008CAE77 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0402C92F1B51C817008CAE77 /* ProximaNova-Regular.otf */,
+				0402C9311B51C868008CAE77 /* ProximaNova-Semibold.otf */,
+				0402C9331B51C870008CAE77 /* ProximaNova-Light.otf */,
 				0402C8CB1B50A7A8008CAE77 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -315,6 +324,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0402C91A1B517B3A008CAE77 /* ListScreen.storyboard in Resources */,
+				0402C9321B51C868008CAE77 /* ProximaNova-Semibold.otf in Resources */,
+				0402C9301B51C817008CAE77 /* ProximaNova-Regular.otf in Resources */,
+				0402C9341B51C870008CAE77 /* ProximaNova-Light.otf in Resources */,
 				0402C8D21B50A7A8008CAE77 /* Main.storyboard in Resources */,
 				0402C8D71B50A7A8008CAE77 /* LaunchScreen.xib in Resources */,
 				0402C8D41B50A7A8008CAE77 /* Images.xcassets in Resources */,
