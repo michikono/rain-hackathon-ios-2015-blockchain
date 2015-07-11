@@ -11,7 +11,6 @@ import UIKit
 
 class DetailVC: UIViewController {
     
-    @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var monthYearLabel: UILabel!
@@ -29,28 +28,28 @@ class DetailVC: UIViewController {
         idLabel.text = "IQ84"
         monthYearLabel.text = "March 2013"
         nameLabel.text  = "Haruki Marakami 2013"
-       
-        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-//        var leftButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
-//        leftButton.setImage(UIImage(named: "back_arrow_360"), forState: UIControlState.Normal)
-//        leftButton.setImage(UIImage(named: "back_arrow_360"), forState: UIControlState.Selected)
-//        leftButton.addTarget(self, action: "backButtonClicked", forControlEvents: UIControlEvents.TouchUpInside)
-//        
-//        let leftBarButton = UIBarButtonItem()
-//        leftBarButton.customView = leftButton
-//        self.navigationItem.leftBarButtonItem = leftBarButton
         
-        var barButton = UIBarButtonItem()
-        barButton.customView = searchButton
+        var searchButton:UIButton = UIButton.buttonWithType(.Custom) as! UIButton
+        searchButton.addTarget(self, action: "searchButtonClicked:", forControlEvents: .TouchUpInside)
+        searchButton.setImage(UIImage(named: "search (1)"), forState: .Normal)
+        searchButton.sizeToFit()
+        var searchButtonItem:UIBarButtonItem = UIBarButtonItem(customView: searchButton)
+        self.navigationItem.rightBarButtonItem  = searchButtonItem
         
-        self.navigationItem.rightBarButtonItem = barButton
+        var backButton:UIButton = UIButton.buttonWithType(.Custom) as! UIButton
+        backButton.addTarget(self, action: "backButtonItemClicked:", forControlEvents: .TouchUpInside)
+        backButton.setImage(UIImage(named: "back_arrow_360"), forState: .Normal)
+        backButton.sizeToFit()
+        var backButtonItem:UIBarButtonItem = UIBarButtonItem(customView: backButton)
+        self.navigationItem.leftBarButtonItem  = backButtonItem
+        
     }
     
-    func backButtonClicked() {
+    func backButtonItemClicked(sender: AnyObject) {
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
-    @IBAction func searchButtonClicked(sender: AnyObject) {
+    func searchButtonClicked(sender: AnyObject) {
         
         UIView.animateWithDuration(2.5, delay: 0.0, options: UIViewAnimationOptions.TransitionFlipFromRight, animations: { () -> Void in
             self.searchBar.hidden = false

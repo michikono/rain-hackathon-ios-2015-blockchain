@@ -37,8 +37,6 @@ class AssetTransferVC: UIViewController {
         var myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
         self.navigationItem.leftBarButtonItem  = myCustomBackButtonItem
 
-      
-
     }
     
     
