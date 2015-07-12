@@ -28,6 +28,8 @@ class AssetTransferVC: UIViewController {
         super.viewDidLoad()
 
         searchBar.hidden = true
+        leftImageView.alpha = 1.0
+        rightImageView.alpha = 0.2
         
         var searchButton:UIButton = UIButton.buttonWithType(.Custom) as! UIButton
         searchButton.addTarget(self, action: "searchButtonClicked:", forControlEvents: .TouchUpInside)
@@ -55,15 +57,12 @@ class AssetTransferVC: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        leftImageView.alpha = 1.0
-        self.rightImageView.alpha = 0.2
 
         UIView.animateWithDuration(2.0, delay: 0, options: UIViewAnimationOptions.Repeat, animations: { () -> Void in
             self.grayArrow.center = CGPointMake(CGRectGetMinX(self.rightLabel.frame), CGRectGetMidY(self.rightLabel.frame))
             }) { (Bool) -> Void in
                 UIView.animateWithDuration(2.0, delay: 0, options: UIViewAnimationOptions.Repeat, animations: { () -> Void in
-                    self.grayArrow.center = CGPointMake(CGRectGetMaxX(self.leftLabel.bounds) + 15, CGRectGetMidY(self.leftLabel.frame))
+                    self.grayArrow.center = CGPointMake(CGRectGetMaxX(self.leftLabel.bounds) + self.grayArrow.bounds.size.width/2.0, CGRectGetMidY(self.leftLabel.frame))
                     
                     }, completion: nil)
         }
